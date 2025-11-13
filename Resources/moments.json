@@ -1,0 +1,39 @@
+[
+  {
+    "id": "m1",
+    "userName": "小明",
+    "avatar": null,
+    "text": "今天在图书馆冲刺一波 📚",
+    "images": ["img1","img2","img3","img4","img5","img6","img7","img8","img9"],
+    "videoURL": null,
+    "createdAt": "2025-11-13T08:20:00Z"
+  },
+  {
+    "id": "m2",
+    "userName": "Alice",
+    "avatar": null,
+    "text": "早安～",
+    "images": ["img4","img5","img6"],
+    "videoURL": null,
+    "createdAt": "2025-11-13T02:05:00Z"
+  },
+  {
+    "id": "m4",
+    "userName": "Alice",
+    "avatar": null,
+    "text": "早安～",
+    "images": ["img4","img5","img6","img4","img5","img6"],
+    "videoURL": null,
+    "createdAt": "2025-11-13T02:05:00Z"
+  },
+  {
+    "id": "m3",
+    "userName": "张老师",
+    "avatar": null,
+    "text": "期末项目冲刺，加油！",
+    "images": [],
+    "videoURL": "sample.mov",
+    "createdAt": "2025-11-12T14:00:00Z"
+  }
+]
+
