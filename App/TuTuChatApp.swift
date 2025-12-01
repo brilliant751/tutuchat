@@ -9,9 +9,24 @@ import SwiftUI
 
 @main
 struct TuTuChatApp: App {
+    @StateObject private var authVM = AuthViewModel()
+
     var body: some Scene {
         WindowGroup {
+            RootView()
+                .environmentObject(authVM)
+        }
+    }
+}
+
+struct RootView: View {
+    @EnvironmentObject private var authVM: AuthViewModel
+
+    var body: some View {
+        if authVM.isSignedIn {
             MainTabView()
+        } else {
+            LoginView()
         }
     }
 }

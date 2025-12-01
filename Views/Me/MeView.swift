@@ -2,6 +2,15 @@ import SwiftUI
 
 struct MeView: View {
     @StateObject private var vm = MeViewModel()
+    @EnvironmentObject private var authVM: AuthViewModel
+
+    private var nickname: String {
+        authVM.session?.username ?? vm.nickname
+    }
+
+    private var wechatId: String {
+        authVM.session?.username ?? vm.wechatId
+    }
 
     var body: some View {
         NavigationStack {
@@ -11,10 +20,10 @@ struct MeView: View {
                     HStack(spacing: 12) {
                         Circle().fill(Color.gray.opacity(0.2))
                             .frame(width: 64, height: 64)
-                            .overlay(Text(String(vm.nickname.prefix(1))).font(.title2))
+                            .overlay(Text(String(nickname.prefix(1))).font(.title2))
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(vm.nickname).font(.headline)
-                            Text("微信号：\(vm.wechatId)")
+                            Text(nickname).font(.headline)
+                            Text("微信号：\(wechatId)")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
@@ -39,6 +48,20 @@ struct MeView: View {
                                 Spacer()
                             }
                             .padding(.vertical, 6)
+                        }
+                    }
+                }
+
+                if authVM.isSignedIn {
+                    Section {
+                        Button(role: .destructive) {
+                            authVM.logout()
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Text("退出登录")
+                                Spacer()
+                            }
                         }
                     }
                 }

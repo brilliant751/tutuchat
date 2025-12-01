@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ChatsView: View {
     @EnvironmentObject var vm: ChatsViewModel   // ← 从环境取 ViewModel
+    @EnvironmentObject private var authVM: AuthViewModel
 
     var body: some View {
         NavigationStack {
@@ -20,6 +21,15 @@ struct ChatsView: View {
             .navigationDestination(for: String.self) { chatId in
                         ChatDetailView(chatId: chatId)
                             .environmentObject(vm) // 传入同一个 VM
+            }
+            .overlay {
+                if vm.isLoading && vm.chats.isEmpty {
+                    ProgressView("同步中…")
+                }
+            }
+            .task(id: authVM.session?.token) {
+                guard let session = authVM.session else { return }
+                await vm.syncFromServer(session: session)
             }
         }
     }

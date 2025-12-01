@@ -14,6 +14,7 @@ struct ChatDetailView: View {
     
     
     @EnvironmentObject var chatsVM: ChatsViewModel
+    @EnvironmentObject private var authVM: AuthViewModel
     let chatId: String
     
     @State private var inputText: String = ""
@@ -21,7 +22,7 @@ struct ChatDetailView: View {
     
     // 简化：每次渲染都从 VM 读取消息（保证是最新）
     private var messages: [Message] { chatsVM.messages(for: chatId) }
-    private let myId = "me"
+    private var myId: String { chatsVM.myUserId }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -31,7 +32,7 @@ struct ChatDetailView: View {
                 ScrollView {
                     LazyVStack(spacing: 8) {
                         ForEach(messages) { msg in
-                            let isMine = (msg.senderId == myId)
+                            let isMine = chatsVM.isMine(msg.senderId)
                             MessageBubbleView(isMine: isMine, kind: msg.kind)
                             // 关键：行宽 = 屏幕宽 - 外层左右边距；并用 alignment 贴左/右
                                 .frame(width: rowWidth,
@@ -116,6 +117,12 @@ struct ChatDetailView: View {
 #if os(iOS)
         .toolbar(.hidden, for: .tabBar) // 进入聊天隐藏底部 Tab（更像微信）
 #endif
+        .onAppear {
+            if let session = authVM.session {
+                chatsVM.joinChatRoom(chatId, session: session)
+            }
+            chatsVM.markChatMessagesReadOnOpen(chatId, me: myId)
+        }
     }
 #if os(macOS)
     private func pickImageOnMac() {

@@ -33,6 +33,13 @@
 		3B274B232EC574C8009538AC /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B274B222EC574BF009538AC /* ImagePreviewView.swift */; };
 		3B274B252EC5830A009538AC /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B274B242EC58302009538AC /* MeViewModel.swift */; };
 		3B274B272EC58333009538AC /* Subpages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B274B262EC58330009538AC /* Subpages.swift */; };
+		3B5000022F0A0001009538AC /* AuthSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5000012F0A0001009538AC /* AuthSession.swift */; };
+		3B5000042F0A0002009538AC /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5000032F0A0002009538AC /* AuthAPI.swift */; };
+		3B5000062F0A0003009538AC /* AuthStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5000052F0A0003009538AC /* AuthStorage.swift */; };
+		3B5000082F0A0004009538AC /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5000072F0A0004009538AC /* AuthViewModel.swift */; };
+		3B50000A2F0A0005009538AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5000092F0A0005009538AC /* LoginView.swift */; };
+		3B50000C2F0A02B7009538AC /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B50000B2F0A02B7009538AC /* ChatService.swift */; };
+		3B50000E2F0A0A6F009538AC /* ChatWebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B50000D2F0A0A6F009538AC /* ChatWebSocketClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +70,14 @@
 		3B274B222EC574BF009538AC /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 		3B274B242EC58302009538AC /* MeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewModel.swift; sourceTree = "<group>"; };
 		3B274B262EC58330009538AC /* Subpages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subpages.swift; sourceTree = "<group>"; };
+		3B5000012F0A0001009538AC /* AuthSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSession.swift; sourceTree = "<group>"; };
+		3B5000032F0A0002009538AC /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		3B5000052F0A0003009538AC /* AuthStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStorage.swift; sourceTree = "<group>"; };
+		3B5000072F0A0004009538AC /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		3B5000092F0A0005009538AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3B50000B2F0A02B7009538AC /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		3B50000D2F0A0A6F009538AC /* ChatWebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWebSocketClient.swift; sourceTree = "<group>"; };
+		3BAC4F322EDD38AD00666309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +124,7 @@
 		3B274AE32EC487A3009538AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3B5000012F0A0001009538AC /* AuthSession.swift */,
 				3B274B0C2EC55D51009538AC /* Moment.swift */,
 				3B274B062EC55ACB009538AC /* Contact.swift */,
 				3B274AF82EC4A578009538AC /* Chat.swift */,
@@ -121,6 +137,7 @@
 		3B274AE42EC487B4009538AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3B50000B2F0A0020009538AC /* Auth */,
 				3B274AEF2EC489A7009538AC /* Me */,
 				3B274AEE2EC4899E009538AC /* Discover */,
 				3B274AED2EC48996009538AC /* Contacts */,
@@ -134,6 +151,7 @@
 		3B274AE52EC487D7009538AC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3B5000072F0A0004009538AC /* AuthViewModel.swift */,
 				3B274B242EC58302009538AC /* MeViewModel.swift */,
 				3B274B0F2EC55D8C009538AC /* MomentsViewModel.swift */,
 				3B274B082EC55AE2009538AC /* ContactsViewModel.swift */,
@@ -145,6 +163,10 @@
 		3B274AE62EC487E5009538AC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3B50000B2F0A02B7009538AC /* ChatService.swift */,
+				3B50000D2F0A0A6F009538AC /* ChatWebSocketClient.swift */,
+				3B5000052F0A0003009538AC /* AuthStorage.swift */,
+				3B5000032F0A0002009538AC /* AuthAPI.swift */,
 				3B274B0E2EC55D7A009538AC /* MomentsService.swift */,
 			);
 			path = Services;
@@ -200,9 +222,18 @@
 		3B274B202EC572B4009538AC /* TuTuChat */ = {
 			isa = PBXGroup;
 			children = (
+				3BAC4F322EDD38AD00666309 /* Info.plist */,
 				3B274B1F2EC572B4009538AC /* Assets.xcassets */,
 			);
 			path = TuTuChat;
+			sourceTree = "<group>";
+		};
+		3B50000B2F0A0020009538AC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3B5000092F0A0005009538AC /* LoginView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +312,11 @@
 				3B274AF52EC48A03009538AC /* MeView.swift in Sources */,
 				3B274AEC2EC4897E009538AC /* ChatsView.swift in Sources */,
 				3B274ADE2EC484F6009538AC /* ContentView.swift in Sources */,
+				3B50000A2F0A0005009538AC /* LoginView.swift in Sources */,
 				3B274B232EC574C8009538AC /* ImagePreviewView.swift in Sources */,
 				3B274B102EC55D91009538AC /* MomentsViewModel.swift in Sources */,
 				3B274B052EC4EFBE009538AC /* EmojiPanel.swift in Sources */,
+				3B5000082F0A0004009538AC /* AuthViewModel.swift in Sources */,
 				3B274B072EC55ACF009538AC /* Contact.swift in Sources */,
 				3B274AFF2EC4D9AE009538AC /* ChatRowView.swift in Sources */,
 				3B274B252EC5830A009538AC /* MeViewModel.swift in Sources */,
@@ -291,6 +324,8 @@
 				3B274B112EC55D9F009538AC /* MomentsService.swift in Sources */,
 				3B274ADF2EC484F6009538AC /* TuTuChatApp.swift in Sources */,
 				3B274B012EC4DF86009538AC /* MessageBubbleView.swift in Sources */,
+				3B5000062F0A0003009538AC /* AuthStorage.swift in Sources */,
+				3B50000C2F0A02B7009538AC /* ChatService.swift in Sources */,
 				3B274AF12EC489B6009538AC /* ContactsView.swift in Sources */,
 				3B274AFB2EC4D979009538AC /* User.swift in Sources */,
 				3B274AFD2EC4D983009538AC /* Chat.swift in Sources */,
@@ -299,9 +334,12 @@
 				3B274AE82EC48916009538AC /* MainTabView.swift in Sources */,
 				3B274B272EC58333009538AC /* Subpages.swift in Sources */,
 				3B274AFA2EC4D95A009538AC /* ChatsViewModel.swift in Sources */,
+				3B5000042F0A0002009538AC /* AuthAPI.swift in Sources */,
 				3B274AF32EC489EC009538AC /* DiscoverView.swift in Sources */,
 				3B274AFC2EC4D97F009538AC /* Message.swift in Sources */,
 				3B274B0D2EC55D57009538AC /* Moment.swift in Sources */,
+				3B5000022F0A0001009538AC /* AuthSession.swift in Sources */,
+				3B50000E2F0A0A6F009538AC /* ChatWebSocketClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +475,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TuTuChat/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -481,6 +520,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TuTuChat/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
